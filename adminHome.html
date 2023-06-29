@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juhosi Software | Home</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="header">
+        <div id="logout">Logout</div>
+    </div>
+    <div id="main-div" class="main-content">
+        <span id="alert-box"></span>
+        <div id="view-div" style="display: flex; justify-content: end;">
+            <button class="btn" onclick="viewOrders()">View Orders</button>
+        </div>
+        <form id="myForm">
+            <div class="form-item">
+                <label for="orderDate">Order Date : </label>
+                <input type="date" id="orderDate" required>
+            </div>
+
+            <div class="form-item">
+                <label for="company">Company : </label>
+                <input type="text" id="company" required readonly>
+            </div>
+            <div class="error-msg" id="error-company"></div>
+
+            <div class="form-item">
+                <label for="owner">Order Owner : </label>
+                <input type="text" id="owner" required readonly>
+            </div>
+            <div class="error-msg" id="error-owner"></div>
+
+            <div class="form-item">
+                <label for="item">Item/Product : </label>
+                <input type="text" id="item" required>
+            </div>
+
+            <div class="form-item">
+                <label for="count">EA/Count : </label>
+                <input type="text" id="count" required>
+            </div>
+            <div class="error-msg" id="error-quantity"></div>
+
+            <div class="form-item">
+                <label for="weight">Weight : </label>
+                <input type="text" id="weight" required>
+            </div>
+            <div class="error-msg" id="error-weight"></div>
+
+            <div class="form-item">
+                <label for="request">Requests : </label>
+                <input type="text" id="request" required>
+            </div>
+    
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="display-detail">
+        <div style="display: flex; justify-content: end;">
+            <button class="btn" onclick="back()">Back</button>
+            <button class="btn" onclick="exportTableToExcel()">Export to Excel</button>
+        </div>
+
+        <table id="myTable">
+            <thead>
+                <tr>
+                  <th>Order Date</th>
+                  <th>Company</th>
+                  <th>Order Owner</th>
+                  <th>Item</th>
+                  <th>Count</th>
+                  <th>Weight</th>
+                  <th>Requests</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+              </tbody>
+        </table>
+    </div>
+
+    <script src="js/home.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+</body>
+</html>
